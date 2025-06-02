@@ -1,0 +1,6 @@
+file: "sonar.csv"
+format: "csv"
+source: "https://www.kaggle.com/datasets/rupakroy/sonarcsv/data"
+n_row: 208
+n_col: 61
+desc: "It contains 208 patterns (111 for 'M', Mines and 97 for 'R', Rocks)"
