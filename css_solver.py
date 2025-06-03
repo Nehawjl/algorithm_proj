@@ -1,6 +1,7 @@
 from css.random_css import random_css
 from css.greedy_css import greedy_css, greedy_recursive_css, partition_greedy_css
-from css.lscss import lscss_algorithm, lscss_algorithm_qr
+from css.lscss import lscss_algorithm_qr as lscss_algorithm
+from css.lscss_qr import lscss_algorithm_qr as lscss_algorithm_qr
 from css.bf_css import brute_force_css
 from css.utility import residual_and_error_qr
 
