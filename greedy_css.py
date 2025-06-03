@@ -1,7 +1,6 @@
 import numpy as np
 import random
-from utility import frobenius_norm_sq
-from metric import residual_error
+from utility import frobenius_norm_sq, residual_error
 
 
 def greedy_css(A_orig, k):
@@ -28,7 +27,7 @@ def greedy_css(A_orig, k):
 
         for candidate_idx in remaining_indices:
             temp_selection = selected_indices + [candidate_idx]
-            error = residual_error(A_orig, temp_selection, A_for_S_cols=current_A_for_S)
+            error = residual_error(A_orig, temp_selection)
             
             if error < min_error_for_this_step:
                 min_error_for_this_step = error
