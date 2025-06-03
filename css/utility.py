@@ -36,15 +36,38 @@ def residual_error(matrix, indices):
         return frobenius_norm_sq(A)
 
     try:
-        # S_pinv = np.linalg.pinv(S)
-        # error_val = frobenius_norm_sq(A - S @ S_pinv @ A)
-        S_pinv_A = np.linalg.lstsq(S, A, rcond=None)[0]
-        residual = A - S @ S_pinv_A
-        error_val = frobenius_norm_sq(residual)
+        S_pinv = np.linalg.pinv(S)
+        error_val = frobenius_norm_sq(A - S @ S_pinv @ A)
+        # S_pinv_A = np.linalg.lstsq(S, A, rcond=None)[0]
+        # residual = A - S @ S_pinv_A
+        # error_val = frobenius_norm_sq(residual)
     except np.linalg.LinAlgError:
         print(f"Warning: SVD did not converge for S with columns {I}. Assigning high error.")
         error_val = float('inf')    
     return error_val
+
+
+def residual(matrix, indices):
+    A, I = matrix, indices
+    if not I:
+        return A.copy()
+    
+    if not isinstance(I, (list, np.ndarray)) or (isinstance(I, np.ndarray) and I.ndim > 1):
+        I = np.array(I).flatten().tolist()
+
+    S = A[:, I]
+    if S.shape[1] == 0:
+        return A.copy()
+
+    try:
+        S_pinv = np.linalg.pinv(S)
+        residual = A - S @ S_pinv @ A
+        # S_pinv_A = np.linalg.lstsq(S, A, rcond=None)[0]
+        # residual = A - S @ S_pinv_A
+    except np.linalg.LinAlgError:
+        print(f"Warning: SVD did not converge for S with columns {I}. Assigning high error.")
+        residual = A.copy()
+    return residual
 
 
 def residual_and_error(matrix, indices):
@@ -63,10 +86,10 @@ def residual_and_error(matrix, indices):
         return A.copy(), frobenius_norm_sq(A)
 
     try:
-        # S_pinv = np.linalg.pinv(S)
-        # residual = A - S @ S_pinv @ A
-        S_pinv_A = np.linalg.lstsq(S, A, rcond=None)[0]
-        residual = A - S @ S_pinv_A
+        S_pinv = np.linalg.pinv(S)
+        residual = A - S @ S_pinv @ A
+        # S_pinv_A = np.linalg.lstsq(S, A, rcond=None)[0]
+        # residual = A - S @ S_pinv_A
         error_val = frobenius_norm_sq(residual)
     except np.linalg.LinAlgError:
         print(f"Warning: SVD did not converge for S with columns {I}. Assigning high error.")
