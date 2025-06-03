@@ -1,6 +1,21 @@
+# cache
 __pycache__
-old
 
+# backup
+old
+css/lscss1.py
+
+# logs
+runs
+logs
+
+# plots
+output_plots
+
+# datasets
 datasets/cmhs/*
 !datasets/cmhs/load.py
 !datasets/cmhs/detail.py
+
+# profiling
+output.prof

@@ -302,7 +302,7 @@ def lscss_algorithm_qr(A, k, T=None):
                 factorial_term = math.factorial(k + 1) # Can overflow for large k
                 denominator = np.sqrt(52 * min(n_rows, d_cols) * factorial_term)
                 alpha = residual_norm / denominator if denominator > 0 else 1e-10 # Avoid division by zero
-            except (OverflowError, ValueError): # Handle large k for factorial
+            except (OverflowError, ValueError, TypeError): # Handle large k for factorial
                 log_factorial = sum(np.log(i) for i in range(1, k + 2)) # log((k+1)!)
                 log_denominator = 0.5 * (np.log(52) + np.log(min(n_rows, d_cols)) + log_factorial)
                 alpha = residual_norm * np.exp(-log_denominator) if residual_norm > 0 else 1e-10

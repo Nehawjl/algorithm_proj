@@ -73,8 +73,9 @@ def residual_and_error_qr(matrix, indices):
             residual = S @ S_pinv @ A
             error_val = frobenius_norm_sq(A - residual)
     except np.linalg.LinAlgError:
-        print(f"Warning: QR decomposition failed for S with columns {I}. Assigning high error.")
-        residual = A.copy()
-        error_val = float('inf')
+        print(f"Warning: QR decomposition failed for S with columns {I}. Assigning high error. Fallback to SVD.")
+        S_pinv = np.linalg.pinv(S)
+        residual = S @ S_pinv @ A
+        error_val = frobenius_norm_sq(A - residual)
     
     return residual, error_val

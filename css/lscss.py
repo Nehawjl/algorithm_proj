@@ -121,7 +121,7 @@ def lscss_algorithm(A, k, T=None):
                 factorial_term = math.factorial(k + 1)
                 denominator = np.sqrt(52 * min(n, d) * factorial_term)
                 alpha = residual_norm / denominator if denominator > 0 else 1e-10
-            except (OverflowError, ValueError):
+            except (OverflowError, ValueError, TypeError):
                 # Use Stirling's approximation for large k
                 log_factorial = (k + 1) * np.log(k + 1) - (k + 1) + 0.5 * np.log(2 * np.pi * (k + 1))
                 log_denominator = 0.5 * (np.log(52) + np.log(min(n, d)) + log_factorial)
@@ -211,7 +211,7 @@ def lscss_algorithm_qr(A, k, T=None):
                 factorial_term = math.factorial(k + 1)
                 denominator = np.sqrt(52 * min(n, d) * factorial_term)
                 alpha = residual_norm / denominator if denominator > 0 else 1e-10
-            except (OverflowError, ValueError):
+            except (OverflowError, ValueError, TypeError):
                 log_factorial = (k + 1) * np.log(k + 1) - (k + 1) + 0.5 * np.log(2 * np.pi * (k + 1))
                 log_denominator = 0.5 * (np.log(52) + np.log(min(n, d)) + log_factorial)
                 alpha = residual_norm * np.exp(-log_denominator)
