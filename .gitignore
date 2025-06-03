@@ -1,2 +1,6 @@
 __pycache__
 old
+
+datasets/cmhs/*
+!datasets/cmhs/load.py
+!datasets/cmhs/detail.py

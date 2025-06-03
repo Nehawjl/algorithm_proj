@@ -1,6 +1,7 @@
 from itertools import combinations
 import numpy as np
-from utility import residual_error
+
+from .utility import residual_error
 
 
 def brute_force_css(A, k):
