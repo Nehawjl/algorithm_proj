@@ -3,8 +3,8 @@ import os
 import random
 
 
-def rel_error(lhs, rhs):
-    return np.max(np.abs(lhs - rhs) / (lhs + rhs))
+def rel_error(x,y):
+    return np.max(np.abs(x - y) / (np.maximum(1e-8, np.abs(x) + np.abs(y))))
 
 
 def seed_everything(seed=114514):
@@ -18,56 +18,6 @@ def seed_everything(seed=114514):
 
 def frobenius_norm_sq(matrix):
     return np.linalg.norm(matrix, 'fro')**2
-
-
-def residual_error(matrix, indices):
-    """
-    Objective function: Calculates ||A - S S_pinv A||_F^2
-    """
-    A, I = matrix, indices
-    if not I:
-        return frobenius_norm_sq(A)
-    
-    if not isinstance(I, (list, np.ndarray)) or (isinstance(I, np.ndarray) and I.ndim > 1):
-        I = np.array(I).flatten().tolist()
-
-    S = A[:, I]
-    if S.shape[1] == 0:
-        return frobenius_norm_sq(A)
-
-    try:
-        S_pinv = np.linalg.pinv(S)
-        error_val = frobenius_norm_sq(A - S @ S_pinv @ A)
-        # S_pinv_A = np.linalg.lstsq(S, A, rcond=None)[0]
-        # residual = A - S @ S_pinv_A
-        # error_val = frobenius_norm_sq(residual)
-    except np.linalg.LinAlgError:
-        print(f"Warning: SVD did not converge for S with columns {I}. Assigning high error.")
-        error_val = float('inf')    
-    return error_val
-
-
-def residual(matrix, indices):
-    A, I = matrix, indices
-    if not I:
-        return A.copy()
-    
-    if not isinstance(I, (list, np.ndarray)) or (isinstance(I, np.ndarray) and I.ndim > 1):
-        I = np.array(I).flatten().tolist()
-
-    S = A[:, I]
-    if S.shape[1] == 0:
-        return A.copy()
-
-    try:
-        S_pinv = np.linalg.pinv(S)
-        residual = A - S @ S_pinv @ A
-        # S_pinv_A = np.linalg.lstsq(S, A, rcond=None)[0]
-        # residual = A - S @ S_pinv_A
-    except np.linalg.LinAlgError:
-        print(f"Warning: SVD did not converge for S with columns {I}. Assigning high error.")
-        residual = A.copy()
-    return residual
 
 
 def residual_and_error(matrix, indices):
@@ -95,4 +45,36 @@ def residual_and_error(matrix, indices):
         print(f"Warning: SVD did not converge for S with columns {I}. Assigning high error.")
         residual = A.copy()
         error_val = float('inf')    
+    return residual, error_val
+
+
+def residual_and_error_qr(matrix, indices):
+    A, I = matrix, indices
+    if not I:
+        return A.copy(), frobenius_norm_sq(A)
+    
+    if not isinstance(I, (list, np.ndarray)) or (isinstance(I, np.ndarray) and I.ndim > 1):
+        I = np.array(I).flatten().tolist()
+    
+    S = A[:, I]
+    if S.shape[1] == 0:
+        return A.copy(), frobenius_norm_sq(A)
+    
+    n, d = S.shape
+    
+    try:
+        if n >= d:
+            Q, R = np.linalg.qr(S, mode='reduced')
+            S_pinv_A = np.linalg.solve(R, Q.T @ A)
+            residual = A - S @ S_pinv_A
+            error_val = frobenius_norm_sq(residual)
+        else:
+            S_pinv = np.linalg.pinv(S)
+            residual = S @ S_pinv @ A
+            error_val = frobenius_norm_sq(A - residual)
+    except np.linalg.LinAlgError:
+        print(f"Warning: QR decomposition failed for S with columns {I}. Assigning high error.")
+        residual = A.copy()
+        error_val = float('inf')
+    
     return residual, error_val

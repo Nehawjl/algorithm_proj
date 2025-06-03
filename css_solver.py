@@ -1,8 +1,8 @@
 from css.random_css import random_css
 from css.greedy_css import greedy_css, greedy_recursive_css, partition_greedy_css
-from css.lscss import lscss_algorithm, lscss_algorithm_incremental, lscss_algorithm_qr
+from css.lscss import lscss_algorithm, lscss_algorithm_qr
 from css.bf_css import brute_force_css
-from css.utility import residual_error
+from css.utility import residual_and_error_qr
 
 
 class CSSProblemSolver:
@@ -21,7 +21,6 @@ class CSSProblemSolver:
 
             # lscss
             'lscss': lscss_algorithm,
-            'lscss_inc': lscss_algorithm_incremental,
             'lscss_qr': lscss_algorithm_qr,
         }
         
@@ -34,4 +33,4 @@ class CSSProblemSolver:
         return list(self.solvers.keys())
 
     def get_objective(self, matrix, indices):
-        return residual_error(matrix, indices)
+        return residual_and_error_qr(matrix, indices)[1]
