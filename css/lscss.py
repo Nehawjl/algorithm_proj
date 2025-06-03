@@ -1,7 +1,8 @@
 import numpy as np
 import random
 import math
-from utility import residual_and_error, rel_error
+
+from .utility import residual_and_error, rel_error
 
 
 def get_col_sampling_probs(E_matrix):
@@ -20,7 +21,7 @@ def get_col_sampling_probs(E_matrix):
 
     # Sanity check always passes, consider removing it
     total_probs = np.sum(probs)
-    assert rel_error(total_probs, 1.0) < 1e-8, f"Error calculating column sampling probabilities, total_probs {total_probs} should be close to 1.0"
+    # assert rel_error(total_probs, 1.0) < 1e-8, f"Error calculating column sampling probabilities, total_probs {total_probs} should be close to 1.0"
     return probs
 
 
@@ -29,7 +30,7 @@ def ls_step(A_prime, k, current_S_indices):
     """
     Perform one local search step (Algorithm 2)
     """
-    assert len(current_S_indices) == k, f"Current solution indices should have length k {k}"
+    # assert len(current_S_indices) == k, f"Current solution indices should have length k {k}"
     n, d = A_prime.shape
     E_residual, f_current = residual_and_error(A_prime, current_S_indices)
     
@@ -54,7 +55,7 @@ def ls_step(A_prime, k, current_S_indices):
         new_indices = set(current_S_indices)
         new_indices.remove(q_swap_out)
         new_indices.add(p_swap_in)
-        assert len(new_indices) == k
+        # assert len(new_indices) == k
         
         new_indices_list = list(new_indices)
         _, f_new = residual_and_error(A_prime, new_indices_list)
@@ -93,13 +94,13 @@ def lscss_algorithm(A, k, T=None):
             
             # Sample column
             probs = get_col_sampling_probs(E_residual)
-            assert probs.size > 0, "Sampling probs array should not be none"
+            # assert probs.size > 0, "Sampling probs array should not be none"
 
             # Exclude already selected columns from sampling
             available_mask = np.ones(d, dtype=bool)
             if I_indices:
                 available_mask[I_indices] = False
-            assert np.any(available_mask), "Error sampling for no available column"
+            # assert np.any(available_mask), "Error sampling for no available column"
             # Renormalize probabilities for available columns
             available_probs = probs[available_mask]
             available_probs = available_probs / np.sum(available_probs)

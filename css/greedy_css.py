@@ -1,24 +1,16 @@
 import numpy as np
 import random
-from utility import frobenius_norm_sq, residual_error
+from .utility import frobenius_norm_sq, residual_error
 
 
-def greedy_css(A_orig, k):
-    """
-    A common greedy approach: iteratively add the column that maximally reduces the current error.
-    This is computationally intensive due to repeated pinv.
-    """
-    n, d = A_orig.shape
-    if k == 0: return frobenius_norm_sq(A_orig)
-    if k >= d: 
-        all_indices = list(range(d))
-        return all_indices
+def greedy_css(A, k):
+    _, d = A.shape
+    if k == 0: return []
+    if k >= d: return list(range(d))
 
     selected_indices = []
     remaining_indices = list(range(d))
     
-    current_A_for_S = A_orig # Columns are from A_orig
-
     for _ in range(k):
         if not remaining_indices: break # No more columns to select
 
@@ -27,44 +19,32 @@ def greedy_css(A_orig, k):
 
         for candidate_idx in remaining_indices:
             temp_selection = selected_indices + [candidate_idx]
-            error = residual_error(A_orig, temp_selection)
+            error = residual_error(A, temp_selection)
             
             if error < min_error_for_this_step:
                 min_error_for_this_step = error
                 best_new_idx = candidate_idx
         
-        if best_new_idx != -1:
-            selected_indices.append(best_new_idx)
-            remaining_indices.remove(best_new_idx)
-        else: # No column improved error (or remaining_indices was empty)
-            break 
-            
-    # final_error = residual_error(A_orig, selected_indices, A_for_S_cols=current_A_for_S)
+        assert best_new_idx != -1, "In each greedy iteration, there should be a best new idx found"
+        selected_indices.append(best_new_idx)
+        remaining_indices.remove(best_new_idx)
     return selected_indices
 
 
-def greedy_recursive_css(A_orig, k):
+def greedy_recursive_css(A, k):
     """
     Implements GreedyFS using recursive updates for G = E^T E.
     Selects feature l = argmax_i ( ||G_{:i}||^2 / G_{ii} )
     """
-    n_samples, d_features = A_orig.shape
-    if k == 0: return [], np.linalg.norm(A_orig, 'fro')**2
-    if k >= d_features:
-        all_indices = list(range(d_features))
-        # For full selection, error is 0 if A can be perfectly reconstructed by itself
-        # P_S A = A (A.T A)^-1 A.T A = A if A.T A is invertible.
-        # If k=d, A_S = A. P_S A = A (A^T A)^† A^T A.
-        # If A has full column rank, (A^T A)^† A^T A = I, so P_S A = A. Error = 0.
-        # Otherwise, it's the projection onto its own column space, so error is 0.
-        return all_indices, 0.0
-
+    _, d = A.shape
+    if k == 0: return []
+    if k >= d: return list(range(d))
+        
     selected_indices = []
-    # remaining_indices 是一个 boolean 掩码，True 表示可选
-    available_indices_mask = np.ones(d_features, dtype=bool)
+    available_indices_mask = np.ones(d, dtype=bool)
 
     # Initial E = A, so G_current = A^T A
-    G_current = A_orig.T @ A_orig
+    G_current = A.T @ A
     
     # Small epsilon for numerical stability in division
     eps = 1e-12
@@ -86,47 +66,30 @@ def greedy_recursive_css(A_orig, k):
                 max_score_for_this_step = score
                 best_new_idx = candidate_idx
         
-        if best_new_idx != -1:
-            selected_indices.append(best_new_idx)
-            available_indices_mask[best_new_idx] = False # Mark as selected
+        assert best_new_idx != -1, "In each greedy iteration, there should be a best new idx found"
+        selected_indices.append(best_new_idx)
+        available_indices_mask[best_new_idx] = False # Mark as selected
 
-            # Update G for the next iteration
-            # G_new = G_old - (G_old_{:l} G_old_{:l}^T) / G_old_{ll}
-            G_col_l = G_current[:, best_new_idx].reshape(-1, 1) # Ensure it's a column vector
-            G_ll = G_current[best_new_idx, best_new_idx]
-            
-            if G_ll < eps: # Should not happen if selected, but for safety
-                # This means the selected column has no energy in the residual space,
-                # which implies further selections won't reduce error.
-                print(f"Warning: G_ll near zero for selected feature {best_new_idx} in iter {iter_num}. Stopping.")
-                break
-            
-            G_current = G_current - (G_col_l @ G_col_l.T) / G_ll
-        else: # No suitable feature found (e.g., all remaining G_ii are zero)
-            break
-            
-    # Final error calculation F(S) = ||A - P^(S)A||_F^2
-    # This G_current is E^T E where E = A - P^(S_final) A.
-    # F(S) = trace(E^T E) = trace(G_current)
-    # However, the F(S) = F(S_prev) - ||E_tilde_l||^2_F relation applies to the *original* F(S).
-    # The G update is for the selection criterion.
-    # To get the final error value, it's safest to recompute with calculate_objective_value.
-    # final_error = calculate_objective_value(A_orig, selected_indices)
-    
+        # Update G for the next iteration
+        # G_new = G_old - (G_old_{:l} G_old_{:l}^T) / G_old_{ll}
+        G_col_l = G_current[:, best_new_idx].reshape(-1, 1) # Ensure it's a column vector
+        G_ll = G_current[best_new_idx, best_new_idx]
+        
+        assert G_ll >= eps, (f"G_ll near zero for selected feature {best_new_idx} in iter {iter_num}. Stopping.")
+        G_current = G_current - (G_col_l @ G_col_l.T) / G_ll
     return selected_indices
 
 
-def partition_greedy_css(A_orig, k_to_select, num_partitions_c):
+def partition_greedy_css(A, k, num_partitions_c):
     """
     Implements Partition-based GreedyFS using Algorithm 1 from the paper
     and recursive updates for f_i and g_i from Theorem 5.
     """
-    n_samples, d_features = A_orig.shape
+    n_samples, d_features = A.shape
     eps = 1e-12 # Small constant for numerical stability
 
-    if k_to_select == 0: return [], np.linalg.norm(A_orig, 'fro')**2
-    if k_to_select >= d_features:
-        return list(range(d_features)), 0.0 # Error is 0 if all features are selected
+    if k == 0: return []
+    if k >= d_features: return list(range(d_features))
 
     selected_indices = []
     available_mask = np.ones(d_features, dtype=bool)
@@ -145,7 +108,7 @@ def partition_greedy_css(A_orig, k_to_select, num_partitions_c):
     B = np.zeros((n_samples, num_partitions_c))
     for j, p_j in enumerate(partitions):
         if p_j: # If partition is not empty
-            B[:, j] = np.sum(A_orig[:, p_j], axis=1)
+            B[:, j] = np.sum(A[:, p_j], axis=1)
             # Paper mentions normalization for B later, but initial def is sum.
             # "The use of B suimhn the size of the corresponding group." - seems like a typo, might mean "normalized by"
             # For now, let's stick to sum as in B_j = sum A_r
@@ -154,9 +117,9 @@ def partition_greedy_css(A_orig, k_to_select, num_partitions_c):
     f_current = np.zeros(d_features)
     g_current = np.zeros(d_features)
     
-    A_T_A_diag = np.einsum('ij,ij->j', A_orig, A_orig) # A_orig[:,i].T @ A_orig[:,i]
+    A_T_A_diag = np.einsum('ij,ij->j', A, A) # A[:,i].T @ A[:,i]
 
-    B_T_A = B.T @ A_orig # c x d_features
+    B_T_A = B.T @ A # c x d_features
 
     for i in range(d_features):
         # f_i^(0) = ||B^T A_{:i}||^2
@@ -168,11 +131,11 @@ def partition_greedy_css(A_orig, k_to_select, num_partitions_c):
     all_vs = []     # List to store v^(r) vectors
 
     # Precompute A^T A and A^T B for updates (as per paper's complexity discussion)
-    A_T_A_full = A_orig.T @ A_orig # d_features x d_features
-    A_T_B_full = A_orig.T @ B      # d_features x num_partitions_c
+    A_T_A_full = A.T @ A # d_features x d_features
+    A_T_B_full = A.T @ B      # d_features x num_partitions_c
 
-    # --- Step 3: Repeat t = 1 to k_to_select ---
-    for t_iter in range(k_to_select):
+    # --- Step 3: Repeat t = 1 to k ---
+    for t_iter in range(k):
         # a) Select l = argmax_i (f_i / g_i)
         scores = np.full(d_features, -np.inf)
         valid_indices_for_selection = np.where(available_mask & (g_current > eps))[0]
@@ -260,5 +223,5 @@ def partition_greedy_css(A_orig, k_to_select, num_partitions_c):
         # Hadamard product `o` is element-wise multiplication `*` in numpy
         f_current = f_current - 2 * (omega_t_new * term_in_parentheses) + np.linalg.norm(v_t_new)**2 * (omega_t_new**2)
 
-    # final_error = calculate_objective_value(A_orig, selected_indices)
+    # final_error = calculate_objective_value(A, selected_indices)
     return selected_indices

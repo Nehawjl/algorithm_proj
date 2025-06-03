@@ -1,5 +1,5 @@
 import numpy as np
-from utility import frobenius_norm_sq
+from css.utility import frobenius_norm_sq
 
 
 def svd_error(A, k):
