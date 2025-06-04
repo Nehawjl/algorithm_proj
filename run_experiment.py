@@ -19,6 +19,7 @@ EXPERIMENT_CONFIG = {
     # "dataset_names": ["cmhs"],
     "dataset_dir": "datasets",
     "k_values": [5, 10, 15, 20, 25, 30],
+    # "k_values": [15, 25],
     # "k_values": [30],
     "t_factor": 2, # t = t_factor * k
     "stochastic_runs": 5,

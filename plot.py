@@ -7,8 +7,8 @@ import numpy as np
 from matplotlib.ticker import MaxNLocator
 
 # --- Configuration ---
-RESULTS_FILE_PATH = "experiment_results_20250603_221740.json" #  <-- IMPORTANT: Update this path
-OUTPUT_DIR = "output_plots_revised" # Changed output directory to avoid overwriting
+RESULTS_FILE_PATH = "logs/experiment_results_20250604_033443.json"
+OUTPUT_DIR = "output_plots"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Define consistent colors and display names for algorithms

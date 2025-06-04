@@ -7,7 +7,8 @@ css/lscss1.py
 
 # logs
 runs
-logs
+logs/*
+!logs/experiment_results_20250604_033443.json
 
 # plots
 output_plots

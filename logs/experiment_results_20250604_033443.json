@@ -1,0 +1,1106 @@
+[
+    {
+        "dataset_name": "cmhs",
+        "k": 5,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 2004301751.5969284,
+        "mean_algorithm_error": 36461939470.075775,
+        "mean_error_ratio": 18.19184134376209,
+        "median_error_ratio": 7.5181004284484505,
+        "all_error_ratios_for_boxplot": [
+            7.394335000635766,
+            5.318656831421833,
+            14.539322874303418,
+            56.18879158400098,
+            7.5181004284484505
+        ],
+        "mean_runtime_s": 6.181783974170684e-05,
+        "all_runtimes_s": [
+            0.0001817271113395691,
+            3.266148269176483e-05,
+            3.296695649623871e-05,
+            3.0022114515304565e-05,
+            3.1711533665657043e-05
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 5,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 2004301751.5969284,
+        "mean_algorithm_error": 3537949150.6767087,
+        "mean_error_ratio": 1.7651778969198855,
+        "median_error_ratio": 1.7651778969198855,
+        "all_error_ratios_for_boxplot": [
+            1.7651778969198855
+        ],
+        "mean_runtime_s": 147.00315528549254,
+        "all_runtimes_s": [
+            147.00315528549254
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 5,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 2004301751.5969284,
+        "mean_algorithm_error": 2658300273.1787395,
+        "mean_error_ratio": 1.326297435533715,
+        "median_error_ratio": 1.327742459144489,
+        "all_error_ratios_for_boxplot": [
+            1.327742459144489,
+            1.3581720600609781,
+            1.2955662605474771,
+            1.3600781133082684,
+            1.2899282846073628
+        ],
+        "mean_runtime_s": 38.59809925183654,
+        "all_runtimes_s": [
+            38.17347617074847,
+            37.76229368522763,
+            39.009816436097026,
+            39.12853908725083,
+            38.91637087985873
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 5,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 2004301751.5969284,
+        "mean_algorithm_error": 2659572561.8692055,
+        "mean_error_ratio": 1.3269322145481288,
+        "median_error_ratio": 1.3277591224911975,
+        "all_error_ratios_for_boxplot": [
+            1.3558198440539253,
+            1.355198671905663,
+            1.3277591224911975,
+            1.2895066861395608,
+            1.3063767481502981
+        ],
+        "mean_runtime_s": 15.950946152955293,
+        "all_runtimes_s": [
+            16.427071368321776,
+            16.422733588144183,
+            15.651966815814376,
+            15.641317073255777,
+            15.611641919240355
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 10,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 397517041.31083745,
+        "mean_algorithm_error": 9385833967.998083,
+        "mean_error_ratio": 23.611148686978815,
+        "median_error_ratio": 16.36619621777515,
+        "all_error_ratios_for_boxplot": [
+            16.36619621777515,
+            15.271020567557866,
+            17.65463010165151,
+            59.68477876124928,
+            9.079117786660275
+        ],
+        "mean_runtime_s": 4.469715058803558e-05,
+        "all_runtimes_s": [
+            6.950460374355316e-05,
+            4.3043866753578186e-05,
+            3.666803240776062e-05,
+            3.80687415599823e-05,
+            3.620050847530365e-05
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 10,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 397517041.31083745,
+        "mean_algorithm_error": 813592771.2518591,
+        "mean_error_ratio": 2.0466865233474913,
+        "median_error_ratio": 2.0466865233474913,
+        "all_error_ratios_for_boxplot": [
+            2.0466865233474913
+        ],
+        "mean_runtime_s": 261.2821058128029,
+        "all_runtimes_s": [
+            261.2821058128029
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 10,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 397517041.31083745,
+        "mean_algorithm_error": 562386519.3253621,
+        "mean_error_ratio": 1.4147482016641528,
+        "median_error_ratio": 1.3976519751465637,
+        "all_error_ratios_for_boxplot": [
+            1.4359159959668941,
+            1.3770287533161798,
+            1.4867687069363722,
+            1.3976519751465637,
+            1.3763755769547543
+        ],
+        "mean_runtime_s": 116.62057450637221,
+        "all_runtimes_s": [
+            118.8083940204233,
+            116.21432429924607,
+            115.32105961255729,
+            116.29693758301437,
+            116.46215701662004
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 10,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 397517041.31083745,
+        "mean_algorithm_error": 554893819.5844434,
+        "mean_error_ratio": 1.3958994506364966,
+        "median_error_ratio": 1.3979999200698463,
+        "all_error_ratios_for_boxplot": [
+            1.376674267338846,
+            1.4485118890737887,
+            1.4245786677068857,
+            1.3979999200698463,
+            1.331732508993116
+        ],
+        "mean_runtime_s": 31.209500508382916,
+        "all_runtimes_s": [
+            31.23254002071917,
+            31.260249238461256,
+            31.219369968399405,
+            31.181383922696114,
+            31.153959391638637
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 15,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 181562832.31646162,
+        "mean_algorithm_error": 4230539954.6227736,
+        "mean_error_ratio": 23.300693763407473,
+        "median_error_ratio": 23.39475710684002,
+        "all_error_ratios_for_boxplot": [
+            14.2365513113107,
+            23.39475710684002,
+            36.63535324161826,
+            13.544544151290099,
+            28.692263005978294
+        ],
+        "mean_runtime_s": 5.828700959682464e-05,
+        "all_runtimes_s": [
+            0.00012713298201560974,
+            4.314817488193512e-05,
+            3.775767982006073e-05,
+            4.4543296098709106e-05,
+            3.885291516780853e-05
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 15,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 181562832.31646162,
+        "mean_algorithm_error": 388958977.3982052,
+        "mean_error_ratio": 2.1422830456855557,
+        "median_error_ratio": 2.1422830456855557,
+        "all_error_ratios_for_boxplot": [
+            2.1422830456855557
+        ],
+        "mean_runtime_s": 415.80454657413065,
+        "all_runtimes_s": [
+            415.80454657413065
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 15,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 181562832.31646162,
+        "mean_algorithm_error": 288057575.271478,
+        "mean_error_ratio": 1.5865448428861113,
+        "median_error_ratio": 1.5929152512203282,
+        "all_error_ratios_for_boxplot": [
+            1.6083883901996,
+            1.5929152512203282,
+            1.5256883002600887,
+            1.5901984911250595,
+            1.6155337816254798
+        ],
+        "mean_runtime_s": 238.97060703001915,
+        "all_runtimes_s": [
+            242.13491085357964,
+            238.92956551350653,
+            241.51547770947218,
+            236.18798988126218,
+            236.08509119227529
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 15,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 181562832.31646162,
+        "mean_algorithm_error": 296722684.71311665,
+        "mean_error_ratio": 1.634269971047449,
+        "median_error_ratio": 1.6523694802568734,
+        "all_error_ratios_for_boxplot": [
+            1.6523694802568734,
+            1.5621350786390107,
+            1.610450753845534,
+            1.6669002864002298,
+            1.679494256095599
+        ],
+        "mean_runtime_s": 48.15674725621939,
+        "all_runtimes_s": [
+            47.98970576375723,
+            48.044695070013404,
+            47.79139850102365,
+            48.47399504482746,
+            48.48394190147519
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 20,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 121480811.08709364,
+        "mean_algorithm_error": 4971613475.843045,
+        "mean_error_ratio": 40.9250928714884,
+        "median_error_ratio": 35.9616318555264,
+        "all_error_ratios_for_boxplot": [
+            18.76605124690547,
+            35.9616318555264,
+            46.53588215506179,
+            28.714485668165967,
+            74.64741343178238
+        ],
+        "mean_runtime_s": 6.0955807566642764e-05,
+        "all_runtimes_s": [
+            8.844584226608276e-05,
+            5.313567817211151e-05,
+            5.1820650696754456e-05,
+            5.570054054260254e-05,
+            5.567632615566254e-05
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 20,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 121480811.08709364,
+        "mean_algorithm_error": 255850975.66435194,
+        "mean_error_ratio": 2.106101970960038,
+        "median_error_ratio": 2.106101970960038,
+        "all_error_ratios_for_boxplot": [
+            2.106101970960038
+        ],
+        "mean_runtime_s": 546.42756713368,
+        "all_runtimes_s": [
+            546.42756713368
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 20,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 121480811.08709364,
+        "mean_algorithm_error": 212541707.55868155,
+        "mean_error_ratio": 1.7495907843939509,
+        "median_error_ratio": 1.7335978786362713,
+        "all_error_ratios_for_boxplot": [
+            1.7148006515016199,
+            1.7335978786362713,
+            1.8179235415800448,
+            1.7261164456225293,
+            1.7555154046292902
+        ],
+        "mean_runtime_s": 404.2154294401407,
+        "all_runtimes_s": [
+            406.0135278310627,
+            407.2931707315147,
+            410.9946889542043,
+            399.0130612999201,
+            397.76269838400185
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 20,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 121480811.08709364,
+        "mean_algorithm_error": 213932697.4407395,
+        "mean_error_ratio": 1.7610410691723488,
+        "median_error_ratio": 1.736333041128861,
+        "all_error_ratios_for_boxplot": [
+            1.736333041128861,
+            1.7290344290225654,
+            1.7299369687030117,
+            1.8227344617678105,
+            1.787166445239495
+        ],
+        "mean_runtime_s": 66.9737938709557,
+        "all_runtimes_s": [
+            66.88022315129638,
+            66.9647731743753,
+            66.97926261462271,
+            66.90067840926349,
+            67.14403200522065
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 25,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 91996264.7037291,
+        "mean_algorithm_error": 4612883765.751828,
+        "mean_error_ratio": 50.142076752871084,
+        "median_error_ratio": 44.83713037162066,
+        "all_error_ratios_for_boxplot": [
+            33.59106875589808,
+            70.30905881254549,
+            65.27761675004199,
+            36.69550907424916,
+            44.83713037162066
+        ],
+        "mean_runtime_s": 4.399493336677551e-05,
+        "all_runtimes_s": [
+            3.5431236028671265e-05,
+            4.537217319011688e-05,
+            4.550628364086151e-05,
+            4.434026777744293e-05,
+            4.932470619678497e-05
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 25,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 91996264.7037291,
+        "mean_algorithm_error": 188217070.5856419,
+        "mean_error_ratio": 2.045920790281961,
+        "median_error_ratio": 2.045920790281961,
+        "all_error_ratios_for_boxplot": [
+            2.045920790281961
+        ],
+        "mean_runtime_s": 669.8185604419559,
+        "all_runtimes_s": [
+            669.8185604419559
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 25,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 91996264.7037291,
+        "mean_algorithm_error": 166120891.3358961,
+        "mean_error_ratio": 1.8057351770844492,
+        "median_error_ratio": 1.804294377930581,
+        "all_error_ratios_for_boxplot": [
+            1.807774152563318,
+            1.804294377930581,
+            1.7954032726315527,
+            1.850826198785468,
+            1.7703778835113264
+        ],
+        "mean_runtime_s": 613.4627330005169,
+        "all_runtimes_s": [
+            619.046837285161,
+            604.5635902732611,
+            617.9759119413793,
+            617.2028315532953,
+            608.5244939494878
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 25,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 91996264.7037291,
+        "mean_algorithm_error": 165773973.7193792,
+        "mean_error_ratio": 1.8019641803202415,
+        "median_error_ratio": 1.7679064227024543,
+        "all_error_ratios_for_boxplot": [
+            1.8446147844516072,
+            1.8698491009389817,
+            1.765764704419514,
+            1.7616858890886504,
+            1.7679064227024543
+        ],
+        "mean_runtime_s": 87.15479275994002,
+        "all_runtimes_s": [
+            86.60791715979576,
+            87.60495653748512,
+            87.55620000883937,
+            87.25314634479582,
+            86.75174374878407
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 30,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 78205964.672396,
+        "mean_algorithm_error": 2781030288.195589,
+        "mean_error_ratio": 35.56033481391473,
+        "median_error_ratio": 28.391535186806053,
+        "all_error_ratios_for_boxplot": [
+            78.3783454696285,
+            28.391535186806053,
+            30.677387717398542,
+            16.57434909085226,
+            23.7800566048883
+        ],
+        "mean_runtime_s": 5.669295787811279e-05,
+        "all_runtimes_s": [
+            7.74487853050232e-05,
+            5.187466740608215e-05,
+            4.9442052841186523e-05,
+            5.2675604820251465e-05,
+            5.202367901802063e-05
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 30,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 78205964.672396,
+        "mean_algorithm_error": 148131594.31664115,
+        "mean_error_ratio": 1.8941214386544927,
+        "median_error_ratio": 1.8941214386544927,
+        "all_error_ratios_for_boxplot": [
+            1.8941214386544927
+        ],
+        "mean_runtime_s": 750.6671987641603,
+        "all_runtimes_s": [
+            750.6671987641603
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 30,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 78205964.672396,
+        "mean_algorithm_error": 140059731.57202783,
+        "mean_error_ratio": 1.7909085599638932,
+        "median_error_ratio": 1.7791632250010931,
+        "all_error_ratios_for_boxplot": [
+            1.7738968686930243,
+            1.7925204909192445,
+            1.7791632250010931,
+            1.77612016679725,
+            1.8328420484088528
+        ],
+        "mean_runtime_s": 886.8655488658696,
+        "all_runtimes_s": [
+            892.5706818476319,
+            879.7231863532215,
+            881.9880688730627,
+            894.9477694202214,
+            885.0980378352106
+        ]
+    },
+    {
+        "dataset_name": "cmhs",
+        "k": 30,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 78205964.672396,
+        "mean_algorithm_error": 139650334.8046585,
+        "mean_error_ratio": 1.7856737064705022,
+        "median_error_ratio": 1.7883342924082102,
+        "all_error_ratios_for_boxplot": [
+            1.818829345582056,
+            1.802376235711216,
+            1.7648508320470466,
+            1.7883342924082102,
+            1.7539778266039818
+        ],
+        "mean_runtime_s": 109.81495546102524,
+        "all_runtimes_s": [
+            111.84437940455973,
+            109.59062062576413,
+            109.09038793854415,
+            109.21591309085488,
+            109.33347624540329
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 5,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 100.77146899491107,
+        "mean_algorithm_error": 405.3390491885872,
+        "mean_error_ratio": 4.022359237504583,
+        "median_error_ratio": 4.071696003347742,
+        "all_error_ratios_for_boxplot": [
+            2.328601619001935,
+            4.809737090972677,
+            4.071696003347742,
+            3.473350333965875,
+            5.428411140234686
+        ],
+        "mean_runtime_s": 1.764930784702301e-05,
+        "all_runtimes_s": [
+            5.5383890867233276e-05,
+            1.1837109923362732e-05,
+            7.735565304756165e-06,
+            6.690621376037598e-06,
+            6.599351763725281e-06
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 5,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 100.77146899491107,
+        "mean_algorithm_error": 151.83737430295713,
+        "mean_error_ratio": 1.5067496367511013,
+        "median_error_ratio": 1.5067496367511013,
+        "all_error_ratios_for_boxplot": [
+            1.5067496367511013
+        ],
+        "mean_runtime_s": 0.0017389003187417984,
+        "all_runtimes_s": [
+            0.0017389003187417984
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 5,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 100.77146899491107,
+        "mean_algorithm_error": 150.81586805853522,
+        "mean_error_ratio": 1.496612777036637,
+        "median_error_ratio": 1.4796115343258311,
+        "all_error_ratios_for_boxplot": [
+            1.6133272493290989,
+            1.4260197903733374,
+            1.5012224145623825,
+            1.4628828965925358,
+            1.4796115343258311
+        ],
+        "mean_runtime_s": 0.008369026333093643,
+        "all_runtimes_s": [
+            0.008873743936419487,
+            0.008265072479844093,
+            0.00824028067290783,
+            0.00820666179060936,
+            0.008259372785687447
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 5,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 100.77146899491107,
+        "mean_algorithm_error": 146.9720707563295,
+        "mean_error_ratio": 1.4584690708810797,
+        "median_error_ratio": 1.4553686709002889,
+        "all_error_ratios_for_boxplot": [
+            1.471444996050057,
+            1.4463167994876935,
+            1.4553686709002889,
+            1.426019790373338,
+            1.49319509759402
+        ],
+        "mean_runtime_s": 0.004109243303537369,
+        "all_runtimes_s": [
+            0.004440227523446083,
+            0.004082748666405678,
+            0.003994116559624672,
+            0.0040336549282073975,
+            0.003995468840003014
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 10,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 44.369160352730574,
+        "mean_algorithm_error": 184.42721064678994,
+        "mean_error_ratio": 4.156653161353772,
+        "median_error_ratio": 4.103558887020845,
+        "all_error_ratios_for_boxplot": [
+            4.103558887020845,
+            4.990215191880136,
+            3.362217978561897,
+            3.5033763748792395,
+            4.823897374426742
+        ],
+        "mean_runtime_s": 1.4303252100944519e-05,
+        "all_runtimes_s": [
+            3.2339245080947876e-05,
+            1.3366341590881348e-05,
+            9.480863809585571e-06,
+            8.359551429748535e-06,
+            7.970258593559265e-06
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 10,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 44.369160352730574,
+        "mean_algorithm_error": 71.60741860624888,
+        "mean_error_ratio": 1.6139006922145194,
+        "median_error_ratio": 1.6139006922145194,
+        "all_error_ratios_for_boxplot": [
+            1.6139006922145194
+        ],
+        "mean_runtime_s": 0.0023012682795524597,
+        "all_runtimes_s": [
+            0.0023012682795524597
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 10,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 44.369160352730574,
+        "mean_algorithm_error": 68.82800345311807,
+        "mean_error_ratio": 1.5512577408709576,
+        "median_error_ratio": 1.5306708886246883,
+        "all_error_ratios_for_boxplot": [
+            1.5306708886246883,
+            1.487667241157242,
+            1.517756921294263,
+            1.6443090530174735,
+            1.5758846002611198
+        ],
+        "mean_runtime_s": 0.029743721708655357,
+        "all_runtimes_s": [
+            0.030143506824970245,
+            0.029680440202355385,
+            0.02968309074640274,
+            0.029635025188326836,
+            0.02957654558122158
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 10,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 44.369160352730574,
+        "mean_algorithm_error": 69.78182049043338,
+        "mean_error_ratio": 1.5727550383120754,
+        "median_error_ratio": 1.566533836038348,
+        "all_error_ratios_for_boxplot": [
+            1.566533836038348,
+            1.5451444044061289,
+            1.5933091270053399,
+            1.6589647214086696,
+            1.4998231027018893
+        ],
+        "mean_runtime_s": 0.01182808056473732,
+        "all_runtimes_s": [
+            0.012095462530851364,
+            0.011830069124698639,
+            0.01173514686524868,
+            0.01173027791082859,
+            0.011749446392059326
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 15,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 22.23974243813477,
+        "mean_algorithm_error": 129.27991509679197,
+        "mean_error_ratio": 5.813013143313837,
+        "median_error_ratio": 5.640830532725107,
+        "all_error_ratios_for_boxplot": [
+            5.640830532725107,
+            8.467593503056728,
+            4.8083798011649606,
+            5.712799578620992,
+            4.435462301001403
+        ],
+        "mean_runtime_s": 1.1544302105903626e-05,
+        "all_runtimes_s": [
+            1.629069447517395e-05,
+            1.210533082485199e-05,
+            1.0643154382705688e-05,
+            9.642913937568665e-06,
+            9.039416909217834e-06
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 15,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 22.23974243813477,
+        "mean_algorithm_error": 34.941957583625474,
+        "mean_error_ratio": 1.5711493818251265,
+        "median_error_ratio": 1.5711493818251265,
+        "all_error_ratios_for_boxplot": [
+            1.5711493818251265
+        ],
+        "mean_runtime_s": 0.0028831493109464645,
+        "all_runtimes_s": [
+            0.0028831493109464645
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 15,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 22.23974243813477,
+        "mean_algorithm_error": 34.783480932681634,
+        "mean_error_ratio": 1.564023550607221,
+        "median_error_ratio": 1.556877440020475,
+        "all_error_ratios_for_boxplot": [
+            1.655593406777337,
+            1.4719997614867917,
+            1.543364680623836,
+            1.556877440020475,
+            1.5922824641276654
+        ],
+        "mean_runtime_s": 0.07446247600018978,
+        "all_runtimes_s": [
+            0.07465126737952232,
+            0.07433019205927849,
+            0.0743537899106741,
+            0.07467145100235939,
+            0.07430567964911461
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 15,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 22.23974243813477,
+        "mean_algorithm_error": 35.675826792997036,
+        "mean_error_ratio": 1.6041474802254563,
+        "median_error_ratio": 1.6049264104573762,
+        "all_error_ratios_for_boxplot": [
+            1.6291797852238423,
+            1.592785389442076,
+            1.6401986971305778,
+            1.5536471188734098,
+            1.6049264104573762
+        ],
+        "mean_runtime_s": 0.025770972669124603,
+        "all_runtimes_s": [
+            0.026034122332930565,
+            0.025645874440670013,
+            0.02575354091823101,
+            0.025696057826280594,
+            0.025725267827510834
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 20,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 11.074090284943189,
+        "mean_algorithm_error": 71.9458640456694,
+        "mean_error_ratio": 6.4967741994563735,
+        "median_error_ratio": 5.826457198452413,
+        "all_error_ratios_for_boxplot": [
+            5.2650987653789025,
+            9.49990618620686,
+            4.566877732349426,
+            5.826457198452413,
+            7.325531114894272
+        ],
+        "mean_runtime_s": 1.2775138020515443e-05,
+        "all_runtimes_s": [
+            1.7587095499038696e-05,
+            1.3668090105056763e-05,
+            1.1252239346504211e-05,
+            1.0831281542778015e-05,
+            1.0536983609199524e-05
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 20,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 11.074090284943189,
+        "mean_algorithm_error": 19.45781943140901,
+        "mean_error_ratio": 1.757058045468954,
+        "median_error_ratio": 1.757058045468954,
+        "all_error_ratios_for_boxplot": [
+            1.757058045468954
+        ],
+        "mean_runtime_s": 0.003612743690609932,
+        "all_runtimes_s": [
+            0.003612743690609932
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 20,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 11.074090284943189,
+        "mean_algorithm_error": 18.786913786092107,
+        "mean_error_ratio": 1.6964746812327878,
+        "median_error_ratio": 1.6915815357936421,
+        "all_error_ratios_for_boxplot": [
+            1.6775103125365007,
+            1.7227836671201504,
+            1.6915815357936421,
+            1.7386054777112738,
+            1.6518924130023704
+        ],
+        "mean_runtime_s": 0.15085310265421867,
+        "all_runtimes_s": [
+            0.15123600512742996,
+            0.15086395852267742,
+            0.1507939901202917,
+            0.15068963915109634,
+            0.15068192034959793
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 20,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 11.074090284943189,
+        "mean_algorithm_error": 18.548343277678477,
+        "mean_error_ratio": 1.6749315564907037,
+        "median_error_ratio": 1.6664500487750509,
+        "all_error_ratios_for_boxplot": [
+            1.7162984886890946,
+            1.6904212047640392,
+            1.664208380194973,
+            1.6372796600303605,
+            1.6664500487750509
+        ],
+        "mean_runtime_s": 0.0479365773499012,
+        "all_runtimes_s": [
+            0.048325348645448685,
+            0.04778518155217171,
+            0.04775009863078594,
+            0.04792984575033188,
+            0.047892412170767784
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 25,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 5.962281967960075,
+        "mean_algorithm_error": 51.61585388225966,
+        "mean_error_ratio": 8.657063547083371,
+        "median_error_ratio": 8.187996270943135,
+        "all_error_ratios_for_boxplot": [
+            7.323879822052434,
+            6.9553104040306755,
+            11.049669510234668,
+            9.76846172815594,
+            8.187996270943135
+        ],
+        "mean_runtime_s": 1.4020130038261414e-05,
+        "all_runtimes_s": [
+            1.84718519449234e-05,
+            1.4944002032279968e-05,
+            1.2440606951713562e-05,
+            1.2021511793136597e-05,
+            1.222267746925354e-05
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 25,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 5.962281967960075,
+        "mean_algorithm_error": 12.107668624816071,
+        "mean_error_ratio": 2.030710504783216,
+        "median_error_ratio": 2.030710504783216,
+        "all_error_ratios_for_boxplot": [
+            2.030710504783216
+        ],
+        "mean_runtime_s": 0.004411892965435982,
+        "all_runtimes_s": [
+            0.004411892965435982
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 25,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 5.962281967960075,
+        "mean_algorithm_error": 11.299410157580613,
+        "mean_error_ratio": 1.8951485720234356,
+        "median_error_ratio": 1.9031537506599825,
+        "all_error_ratios_for_boxplot": [
+            1.9129471638637963,
+            1.9031537506599825,
+            1.923368942252581,
+            1.868136501670409,
+            1.868136501670409
+        ],
+        "mean_runtime_s": 0.2791895031929016,
+        "all_runtimes_s": [
+            0.28015718795359135,
+            0.2789718471467495,
+            0.2789861634373665,
+            0.27893076092004776,
+            0.27890155650675297
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 25,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 5.962281967960075,
+        "mean_algorithm_error": 11.348374577979353,
+        "mean_error_ratio": 1.903360934448068,
+        "median_error_ratio": 1.8903723936762602,
+        "all_error_ratios_for_boxplot": [
+            1.9203077998360194,
+            1.8903723936762602,
+            1.8884080253132323,
+            1.9273440597385676,
+            1.89037239367626
+        ],
+        "mean_runtime_s": 0.08131476901471615,
+        "all_runtimes_s": [
+            0.08133936300873756,
+            0.08153608068823814,
+            0.08128941804170609,
+            0.08124209381639957,
+            0.08116688951849937
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 30,
+        "algorithm": "random",
+        "is_stochastic": true,
+        "baseline_error_svd": 3.1700202748501054,
+        "mean_algorithm_error": 31.892904519001934,
+        "mean_error_ratio": 10.060788813254511,
+        "median_error_ratio": 10.954767830529844,
+        "all_error_ratios_for_boxplot": [
+            10.954767830529844,
+            13.24218200634428,
+            7.962264193801135,
+            11.586329858420576,
+            6.558400177176724
+        ],
+        "mean_runtime_s": 1.5116855502128601e-05,
+        "all_runtimes_s": [
+            1.9136816263198853e-05,
+            1.58846378326416e-05,
+            1.4338642358779907e-05,
+            1.3737007975578308e-05,
+            1.2487173080444336e-05
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 30,
+        "algorithm": "greedy_rec",
+        "is_stochastic": false,
+        "baseline_error_svd": 3.1700202748501054,
+        "mean_algorithm_error": 7.238695351016971,
+        "mean_error_ratio": 2.283485505896095,
+        "median_error_ratio": 2.283485505896095,
+        "all_error_ratios_for_boxplot": [
+            2.283485505896095
+        ],
+        "mean_runtime_s": 0.004755791276693344,
+        "all_runtimes_s": [
+            0.004755791276693344
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 30,
+        "algorithm": "lscss",
+        "is_stochastic": true,
+        "baseline_error_svd": 3.1700202748501054,
+        "mean_algorithm_error": 6.761392625797738,
+        "mean_error_ratio": 2.132917785870455,
+        "median_error_ratio": 2.1168561576356173,
+        "all_error_ratios_for_boxplot": [
+            2.2069829551998357,
+            2.1122643916600845,
+            2.1168561576356173,
+            2.1168561576356173,
+            2.1116292672211197
+        ],
+        "mean_runtime_s": 0.4556700184941292,
+        "all_runtimes_s": [
+            0.45624282769858837,
+            0.4552302770316601,
+            0.45580435544252396,
+            0.455346904695034,
+            0.45572572760283947
+        ]
+    },
+    {
+        "dataset_name": "sonar",
+        "k": 30,
+        "algorithm": "lscss_qr",
+        "is_stochastic": true,
+        "baseline_error_svd": 3.1700202748501054,
+        "mean_algorithm_error": 6.790138484289716,
+        "mean_error_ratio": 2.141985822034147,
+        "median_error_ratio": 2.121508451666326,
+        "all_error_ratios_for_boxplot": [
+            2.1116292672211197,
+            2.121508451666326,
+            2.1116292672211197,
+            2.146503805838669,
+            2.2186583182235005
+        ],
+        "mean_runtime_s": 0.1231604803353548,
+        "all_runtimes_s": [
+            0.12331066280603409,
+            0.1235067117959261,
+            0.12293023616075516,
+            0.12271657399833202,
+            0.12333821691572666
+        ]
+    }
+]
