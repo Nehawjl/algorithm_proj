@@ -130,10 +130,11 @@ def ls_step_qr(A_prime, k, current_S_indices, Q_current, R_current, current_obje
         if p_swap_in == q_swap_out_original_idx: # Swapping a column with itself
             continue
         
-        if p_swap_in in current_S_indices and p_swap_in != q_swap_out_original_idx:
+        # impossible since the original solution has no columns that are the same
+        # if p_swap_in in current_S_indices and p_swap_in != q_swap_out_original_idx:
         # Candidate p_swap_in is already in current_S_indices and not the one being swapped out. 
         # Skipping this swap for q_idx to avoid duplicate columns.
-            continue
+            # continue
 
         # Perform QR downdate (remove q_swap_out_original_idx)
         if Q_current is None or R_current is None or Q_current.shape[1] == 0: # Should not happen if current_S_indices is not empty

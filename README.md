@@ -50,5 +50,5 @@ The implementations strictly follow details proposed in the original work.
 - set the result json file path in `plot.py` and run `python plot.py`, the result will be plotted under `./output_plots`
 
 ## Accuracy and Runtime on CHMS
-![Error Ratio](output_plots/CMHS_error_ratio_vs_k.pdf)
-![Runtime](output_plots/CMHS_error_ratio_vs_k.pdf)
+![Error Ratio](./output_plots/CMHS_error_ratio_vs_k.png)
+![Runtime](./output_plots/CMHS_runtime_vs_k.png)

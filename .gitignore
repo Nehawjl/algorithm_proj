@@ -11,7 +11,9 @@ logs/*
 !logs/experiment_results_20250604_033443.json
 
 # plots
-output_plots
+output_plots/*
+!output_plots/CMHS_error_ratio_vs_k.png
+!output_plots/CMHS_runtime_vs_k.png
 
 # datasets
 datasets/cmhs/*
